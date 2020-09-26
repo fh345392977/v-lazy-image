@@ -164,18 +164,20 @@ _Fields marked as (\*) are required._
 
 ### Props
 
-| Name                   | Type          | Default       | Description                                                                                                                                               |
-| ---------------------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src`                  | String _(\*)_ |       -       | Image `src` to lazy load when it intersects with the viewport                                                                                             |
-| `src-placeholder`      | String        | ' '           | If defined, it will be shown until the `src` image is loaded. <br> Useful for progressive image loading, [see demo](https://codesandbox.io/s/9l3n6j5944)  |
-| `srcset`               | String        |       -       | Images to be used for different resolutions                                                                                                               |
-| `intersection-options` | Object        | () => ({})    | The [Intersection Observer options object](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer). |
-| `use-picture`          | Boolean       | false         | Wrap the img in a picture tag. |
+| Name                   | Type          | Default    | Description                                                                                                                                               |
+| ---------------------- | ------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src`                  | String _(\*)_ | -          | Image `src` to lazy load when it intersects with the viewport                                                                                             |
+| `error-src`                  | String _(\*)_ | -          | Image `src`  when load error |
+| `retry-times`                  | Number | -          | retry times when load error **By Add timeStamp** |
+| `src-placeholder`      | String        | ' '        | If defined, it will be shown until the `src` image is loaded. <br> Useful for progressive image loading, [see demo](https://codesandbox.io/s/9l3n6j5944)  |
+| `srcset`               | String        | -          | Images to be used for different resolutions                                                                                                               |
+| `intersection-options` | Object        | () => ({}) | The [Intersection Observer options object](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer). |
+| `use-picture`          | Boolean       | false      | Wrap the img in a picture tag.                                                                                                                            |
 
 ### Events
 
-| Name        | Description                                              |
-| ----------- | -------------------------------------------------------- |
-| `intersect` | Triggered when the image intersects the viewport         |
-| `load`      | Triggered when the lazy image defined in `src` is loaded |
+| Name        | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| `intersect` | Triggered when the image intersects the viewport             |
+| `load`      | Triggered when the lazy image defined in `src` is loaded     |
 | `error`     | Triggered when the lazy image defined in `src` fails to load |
